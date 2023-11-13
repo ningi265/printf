@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * _printf - is a function that selects the correct function to print.
  * @format: identifier to look for.
@@ -23,23 +24,24 @@ int _printf(const char * const format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-Here:
 	while (format[i] != '\0')
 	{
-		j = 13;
-		while (j >= 0)
+		
+		for (j = 0; j < 14; j++)
 		{
-			if (p[j].ph[0] == format[i] && p[j].ph[1] == format[i + 1])
+			if (strncmp(p[j].ph, &format[i], 2) == 0)
 			{
 				length += p[j].function(args);
-				i = i + 2;
-				goto Here;
+				i += 2;
+				break;
 			}
-			j--;
 		}
-		mine_putchar(format[i]);
-		length++;
-		i++;
+		if (j == 14)
+		{
+			mine_putchar(format[i]);
+			length++;
+			i++;
+		}
 	}
 	va_end(args);
 	return (length);
