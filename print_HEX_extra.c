@@ -29,7 +29,7 @@ int prints_HEX_extra(unsigned int num)
 	{
 		if (array[i] > 9)
 			array[i] = array[i] + 7;
-		_putchar(array[i] + '0');
+		mine_putchar(array[i] + '0');
 	}
 	free(array);
 	return (counter);

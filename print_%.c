@@ -5,6 +5,6 @@
  */
 int prints_37(void)
 {
-	_putchar(37);
+	mine_putchar(37);
 	return (1);
 }
