@@ -22,9 +22,9 @@ typedef struct format
 } convert;
 
 int *_strcpy(char *dest, char *src);
-int print_pointer(va_list val);
-int print_unsigned(va_list args);
-int print_hex_extra(unsigned long int num);
+int prints_pointer(va_list val);
+int prints_unsigned(va_list args);
+int prints_hex_extra(unsigned long int num);
 int _strlenc(const char *s);
 int prints_HEX_extra(unsigned int num);
 int prints_exc_string(va_list val);
